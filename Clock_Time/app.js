@@ -3,6 +3,7 @@
  const minHand = document.querySelector('.min-hand')
  const hourHand = document.querySelector('.hour-hand')
  const audio = document.querySelector(`audio[data-key="clock"]`)
+ const btn = document.querySelector('button')
 
  const setDate = () => {
    
@@ -21,10 +22,25 @@
     const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
     hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
-    audio.play()
+    
  }
 
 
  setInterval(setDate, 1000);
 
  setDate();
+
+ btn.addEventListener("click", function() {
+
+    if (audio.remove) {
+        audio.play();
+        btn.innerHTML= `<i class="fa-solid fa-volume-high"></i>` 
+    }
+    else {
+        audio.remove()
+    };
+    btn.innerHTML= `<i class="fa-solid fa-volume-off"></i>`
+    
+});
+
+

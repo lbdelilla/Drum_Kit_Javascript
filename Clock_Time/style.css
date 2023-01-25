@@ -66,6 +66,12 @@ html {
     height: 3px;
   }
 
-  .hour-hand{
-    
+  .sound-button{
+    background-color: transparent;
+    color: white;
+    border:transparent;
+    font-size: 30px;
+    cursor: pointer;
   }
+
+ 
